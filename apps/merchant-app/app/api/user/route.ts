@@ -4,7 +4,7 @@ import { PrismaClient } from "@repo/db/client";
 const client = new PrismaClient();
 
 export const GET = async () => {
-    await client.user.create({
+    await client.merchant.create({
         data: {
             email: "asd",
             name: "adsads"
