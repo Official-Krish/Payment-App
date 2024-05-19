@@ -8,15 +8,15 @@ export const authOptions = {
           name: 'Credentials',
           credentials: {
             email: {label: "Email", type :"email"},
-            phone: { label: "Phone number", type: "text", placeholder: "1231231231" },
+            number: { label: "Phone number", type: "text", placeholder: "1231231231" },
             password: { label: "Password", type: "password" },
           },
           // TODO: User credentials type from next-aut
-          async authorize(credentials: any) {
+          async authorize(credentials : any) {
             const hashedPassword = await bcrypt.hash(credentials.password, 10);
             const existingUser = await db.user.findFirst({
                 where: {
-                    number: credentials.phone
+                    number: credentials.number
                 }
             });
 
